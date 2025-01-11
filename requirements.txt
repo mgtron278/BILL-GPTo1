@@ -1,0 +1,7 @@
+streamlit
+openai
+azure-storage-blob
+azure-ai-formrecognizer
+python-dotenv
+numpy
+langchain-openai
