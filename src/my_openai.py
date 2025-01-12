@@ -27,11 +27,11 @@ def create_receipt_chain():
     
     # Create the prompt template using the new format
     prompt = ChatPromptTemplate.from_messages([
-        ("system", """You are a helpful assistant that answers questions about receipt data.
+        ("system", """You are a helpful finance assistant that answers questions about receipt data. 
         Here is the receipt data in JSON format:
         {receipt_data}
         
-        Please provide clear and concise answers based only on the information available in the receipt data."""),
+        Please provide clear and concise answers based only on the information available in the receipt data, make sure you are providing a clear answer, take care of the font"""),
         ("human", "{question}")
     ])
     
@@ -52,24 +52,4 @@ def query_receipt(chain, question: str, receipt_data: Dict[str, Any]) -> str:
     
     return response
 
-def main(blob_name):
-    # Make sure you have set your OpenAI API key
-    receipt_data = process_receipt(blob_name)
-    # Create the chain
-    chain = create_receipt_chain()
-    
-    # Example questions
-    questions = [
-        "What items were purchased?",
-        "What was the total amount?",
-    ]
-    
-    # Run example queries
-    for question in questions:
-        print(f"\nQuestion: {question}")
-        try:
-            response = query_receipt(chain, question, receipt_data)
-            print(f"Answer: {response}")
-        except Exception as e:
-            print(f"Error processing question: {str(e)}")
 

@@ -16,17 +16,18 @@ def handle_image_upload():
         # Save the uploaded file to a temporary location
         blob_name = uploaded_file.name
         upload_image_to_blob(uploaded_file, blob_name)
+        st.success("File uploaded to Blob")
         
         # Step 2: Process the uploaded file
         extracted_json_data = process_receipt(blob_name)
-        print(",")
+        st.success("Json data extracted")
         return extracted_json_data
     
     return None
 
 def main():
     # Title of the app
-    st.title("Receipt Question Answering")
+    st.title("BILL-GPT")
 
     # Step 1: Upload Image and Process
     st.subheader("Step 1: Upload Receipt Image")
@@ -51,9 +52,4 @@ def main():
         st.warning("Please upload a receipt image first!")
 
 if __name__ == "__main__":
-    # No need to specify the port here, Azure automatically provides it
-    # When running locally, you can use the default port (8501)
-      # Set the port dynamically
-    st.set_option('server.enableCORS', True)
-
     main()

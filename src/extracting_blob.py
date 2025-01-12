@@ -12,7 +12,7 @@ import os
 
 load_dotenv()
 
-# Replace with your Azure Cognitive Services Form Recognizer API key and endpoint
+
 FORM_RECOGNIZER_ENDPOINT = os.getenv("FORM_RECOGNIZER_ENDPOINT")
 FORM_RECOGNIZER_API_KEY = os.getenv("FORM_RECOGNIZER_API_KEY")
 

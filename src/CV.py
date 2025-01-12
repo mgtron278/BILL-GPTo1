@@ -23,5 +23,5 @@ def upload_image_to_blob(file_object, blob_name):
     except Exception as e:
         print(f"An error occurred: {e}")
 
-# Call the function
+
 
