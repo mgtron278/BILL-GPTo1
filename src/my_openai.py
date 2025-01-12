@@ -7,7 +7,7 @@ from langchain_core.output_parsers import StrOutputParser
 import json
 from typing import Dict, Any
 import streamlit as st
-from extracting_blob import process_receipt
+from src.extracting_blob import process_receipt
 
 
 load_dotenv()

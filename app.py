@@ -1,7 +1,7 @@
 import streamlit as st
-from CV import upload_image_to_blob
-from extracting_blob import process_receipt
-from my_openai import create_receipt_chain, query_receipt
+from src.CV import upload_image_to_blob
+from src.extracting_blob import process_receipt
+from src.my_openai import create_receipt_chain, query_receipt
 import os
 
 # Set up the uploaded file directory
