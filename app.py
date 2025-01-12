@@ -19,7 +19,9 @@ def handle_image_upload():
         
         # Step 2: Process the uploaded file
         extracted_json_data = process_receipt(blob_name)
+        print(",")
         return extracted_json_data
+    
     return None
 
 def main():
