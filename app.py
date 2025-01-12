@@ -54,4 +54,6 @@ if __name__ == "__main__":
     # No need to specify the port here, Azure automatically provides it
     # When running locally, you can use the default port (8501)
       # Set the port dynamically
+    st.set_option('server.enableCORS', True)
+
     main()
