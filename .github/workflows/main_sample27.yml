@@ -69,6 +69,13 @@ jobs:
           tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_8D3398DFD5F4498E8F19B03AD1D62006 }}
           subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_3A7F3C85A2324C159CB133EAF31DF393 }}
 
+      - name: Set environment variables
+        run: |
+          echo "CONNECTION_STRING=${{ secrets.CONNECTION_STRING }}" >> $GITHUB_ENV
+          echo "FORM_RECOGNIZER_API_KEY=${{ secrets.FORM_RECOGNIZER_API_KEY }}" >> $GITHUB_ENV
+          echo "FORM_RECOGNIZER_ENDPOINT=${{ secrets.FORM_RECOGNIZER_ENDPOINT }}" >> $GITHUB_ENV
+          echo "OPENAI_API_KEY=${{ secrets.OPENAI_API_KEY }}" >> $GITHUB_ENV
+
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v3
         id: deploy-to-webapp

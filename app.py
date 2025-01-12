@@ -17,8 +17,6 @@ def handle_image_upload():
         blob_name = uploaded_file.name
         upload_image_to_blob(uploaded_file, blob_name)
         
-        
-        
         # Step 2: Process the uploaded file
         extracted_json_data = process_receipt(blob_name)
         return extracted_json_data
@@ -51,4 +49,7 @@ def main():
         st.warning("Please upload a receipt image first!")
 
 if __name__ == "__main__":
+    # No need to specify the port here, Azure automatically provides it
+    # When running locally, you can use the default port (8501)
+      # Set the port dynamically
     main()
